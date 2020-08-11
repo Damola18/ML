@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="map">
+        <h1>Map</h1>
+        <!-- FOR STATIC EST. LOCATION
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-YOUR_MAP_CODE" width="960" height="410">
+        </iframe> -->
+    </div>
+    <script>
+        function myMap(){
+            // Map Location with coordinates
+            var myLocation = {
+                zoom:10,
+                center:{
+                    lat:7.3775, 
+                    lng:3.94709
+                }
+            }
+            // Map Reference
+            var map = new google.maps.Map(document.getElementById('map'), myLocation);
+
+            // Add Marker to Map
+            var marker = new google.maps.Marker({
+                position: {lat:7.3940673, lng:3.780089},
+                map: map,
+                icon: ''
+            });
+
+        }
+    </script>
+    <!-- Alternate code for the initMap function()
+    
+    <script>
+        function initMap(){
+            // Map Location with coordinates
+            map = new google.maps.Map(document.getElementById('map'),{
+                zoom:12,
+                center ={
+                    lat:7.3775,
+                    lng:3.94709
+                });
+
+            // Map Marker
+            var marker = new google.maps.Marker({
+                position:{lat:7.3940673, lng:3.780089},
+                map: map,
+                icon: ''
+                }); 
+        }
+    </script>
+    -->
+    <!-- Map API -->
+    <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ-nh0Tvu3Ds4z1cXIWqKiTSdaRnYiTJc&callback=myMap">
+    </script>
+</body>
+</html>
